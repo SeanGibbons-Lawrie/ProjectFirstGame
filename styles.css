@@ -12,9 +12,17 @@ body {
 
 .game-container {
   position: relative;
-  background: #9ae2ff;
-  width: 800px;
-  height: 600px;
+  width: 1920px;
+  height: 1080px;
   margin: 0 auto;
   outline: 1px solid #fff;
+}
+
+.player_stats{
+  left: 50px;
+  top: 60px;
+  width: 360px;
+  height: 955px;
+  border: 1px solid white;
+  position: absolute;
 }
