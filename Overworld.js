@@ -13,9 +13,9 @@ class Overworld {
 
       this.map.drawLowerImage(this.ctx)
       
-      Object.values(this.map.gameObjects).forEach(object => {
-        
-
+      Object.values(this.map.gameObjects).sort((a,b) => {
+        return a.y -b.y//This ensures that northern sprites are drawn before southern ones
+      }).forEach(object => {
         object.sprite.draw(this.ctx)
       })
 
@@ -29,9 +29,16 @@ class Overworld {
     step()
   }
 
+  startMap(mapConfig) {
+    this.map = new OverworldMap(mapConfig)
+    this.map.overworld = this
+    this.map.mountObjects();
+  }
+
   init() {
     
-    this.map = new OverworldMap(window.OverworldMaps.DemoRoom)
+    this.startMap(window.OverworldMaps.DemoRoom)
+    // this.map.mountObjects()
     this.startGameLoop()
 
     // let str = 1;
