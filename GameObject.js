@@ -10,4 +10,22 @@ class GameObject {
       src: config.src || '/images/Green_Slime/Attack_1.png',
     });
   }
+
+  mount(map){
+    console.log('mounting')
+    this.isMounted = true
+  }
+
+  //If we have a behavior, kick off after a short delay
+  // setTimeout(() => {
+  //   this.doBehaviorEvent(map)
+  // }, 10)
+
+  // update()
+
+  // doBehaviorEvent(map){
+  //   const eventHandler = new OverworldEvent ({ map, event: eventConfig})
+  // }
+  //Behaviour loop incomplete, Part 8 if needed to include
+  
 }
