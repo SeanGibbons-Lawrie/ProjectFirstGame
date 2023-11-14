@@ -45,7 +45,25 @@ class Overworld {
     image.onload = () => {
       this.ctx.drawImage(image, 0, 0)
     }
-    image.src = 'images/seamlessdarkbg.png'
+    image.src = '/images/seamlessdarkbg.png'
+
+    const x = 650
+    const y = 350
+    const hero = new Image()
+    hero.onload = () => {
+      this.ctx.drawImage(
+        hero,
+        0, //left cut
+        0, //top cut
+        128,//width of source image
+        128,//height of  sourceimage
+        x, //position x
+        y, //y position
+        128, //width of displayed image
+        128, //height of displayed image
+        )
+    }
+    hero.src ='/images/Green_Slime/Idle.png'
   }
 
   startGameLoop() {
