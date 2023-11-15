@@ -8,17 +8,17 @@ class Overworld {
 
   startGameLoop() {
     const step = () => {
-
+      //Clear off the canvas
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-
+      //Draw Lower Layer
       this.map.drawLowerImage(this.ctx)
-      
+      //Draw Game Objects
       Object.values(this.map.gameObjects).sort((a,b) => {
         return a.y -b.y//This ensures that northern sprites are drawn before southern ones
       }).forEach(object => {
         object.sprite.draw(this.ctx)
       })
-
+      //Draw Upper Layer
       this.map.drawUpperImage(this.ctx)
 
       console.log("stepping")
@@ -40,6 +40,13 @@ class Overworld {
     this.startMap(window.OverworldMaps.DemoRoom)
     // this.map.mountObjects()
     this.startGameLoop()
+
+    this.map.startCutscene([{
+      type: "battle",
+    }])
+  }
+}
+
 
     // let str = 1;
     // let time = 3;
@@ -86,5 +93,4 @@ class Overworld {
     //   hero.sprite.draw(this.ctx)
     // }, 1000)
     
-  }
-}
+ 
