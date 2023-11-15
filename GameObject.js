@@ -16,6 +16,8 @@ class GameObject {
     this.isMounted = true
   }
 
+  update(){}
+
   //If we have a behavior, kick off after a short delay
   // setTimeout(() => {
   //   this.doBehaviorEvent(map)
