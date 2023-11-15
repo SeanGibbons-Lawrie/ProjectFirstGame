@@ -1,0 +1,60 @@
+* {
+  box-sizing:border-box;
+}
+
+body {
+  background: #333;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Ribeye', cursive;
+}
+
+.game-container {
+  top: 50px;
+  left: 30px;
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  outline: 1px solid #fff;
+}
+
+.player_stats_title::before{
+  content: "Player Stats";
+  text-align: center;
+  font-size: 40px;
+  left: 40px;
+  top: 40px;
+  width: 270px;
+  height: 40px;
+  border: 1px solid white;
+  position: absolute;
+  -webkit-text-fill-color: #fff;
+}
+
+.player_stats{
+  text-align: center;
+  font-size: 30px;
+  left: 40px;
+  top: 90px;
+  width: 272px;
+  height: 500px;
+  border: 1px solid white;
+  position: absolute;
+  -webkit-text-fill-color: #fff;
+}
+
+p{
+  -webkit-text-fill-color: #fff;
+  font-size: 20px;
+}
+
+.CombatLogContainer {
+  position: absolute;
+  top: 500px;
+  left: 900px;
+  user-select: none;
+  cursor: move;
+  border: 1px solid white;
+}
