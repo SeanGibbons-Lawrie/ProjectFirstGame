@@ -7,6 +7,8 @@ class OverworldMap {
 
     this.upperImage = new Image()
     this.upperImage.src = config.upperSrc
+
+    this.isCutscenePlaying = false
   }
 
   drawLowerImage(ctx) {
@@ -23,19 +25,27 @@ class OverworldMap {
       let object = this.gameObjects[key];
       object.id = key;
   
-      // let obj;
-      // if (config.type === "Person") {
-      //   obj = new Person(config);
-      // }
-      // if (config.type === "PizzaStone") {
-      //   obj = new PizzaStone(config);
-      // }
-      // this.gameObjects[key] = obj;
-      // this.gameObjects[key].id = key;
       object.mount(this);
     })
   }
+
+  // async startCutscene(events) {
+  //   this.isCutscenePlaying = true;
+
+  //   for (let i=0; i<events.length; i++) {
+  //     const eventHandler = new OverworldEvent({
+  //       event: events[i],
+  //       map: this,
+  //     })
+  //     const result = await eventHandler.init();
+  //     if (result === "LOST_BATTLE") {
+  //       break;
+  //     }
+  //   }
+  //   this.isCutscenePlaying = false;
+  // }
 }
+
 
 
 window.OverworldMaps = {
@@ -44,7 +54,7 @@ window.OverworldMaps = {
     upperSrc: "/images/Header.png",
     gameObjects: {
       hero: new GameObject({
-        x: 650,
+        x: 750,
         y: 350,
       })
     }
